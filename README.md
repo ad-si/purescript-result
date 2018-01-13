@@ -1,18 +1,57 @@
-# purescript-either
+# PureScript Result
 
-[![Latest release](http://img.shields.io/github/release/purescript/purescript-either.svg)](https://github.com/purescript/purescript-either/releases)
-[![Build status](https://travis-ci.org/purescript/purescript-either.svg?branch=master)](https://travis-ci.org/purescript/purescript-either)
+[![Latest release](http://img.shields.io/github/release/adius/purescript-result.svg)
+](https://github.com/adius/purescript-result/releases)
+[![Build status](https://travis-ci.org/adius/purescript-result.svg?branch=master)
+](https://travis-ci.org/adius/purescript-result)
 
-The `Either` type provides is used to represent values that can be one of two possibilities. For example, `Either Int Number` can be used in a place where either integers or floating point numbers are acceptable.
+The `Result` type is used to represent computations
+that may succeed or fail.
 
-A common use for this type is error handling, where by convention the `Left` constructor carries error messages and the `Right` constructor carries expected values (“`Right` is right”). This convention is used as the `Functor`, `Applicative`, `Monad`, etc. instances all operate on the `Right` part of the `Either`.
+This should be used instead of the more genereic `Either`.
+
+Many other functional programming languages also support Result types:
+
+Language | Type Name | Success | Error | Documentation
+---------|-----------|---------|-------|--------------
+Elm      | Result error value | Ok      | Err   | [doc.rust-lang.org/book][rust]
+Rust     | Result<T, E>       | Ok      | Err   | [package.elm-lang.org][elm]
+OCaml    | ('a, 'b) result    | Ok | Error | [ocaml.org/learn][ocaml]
+F#       | Result<'T,'TError> | Ok | Error | [docs.microsoft.com][fsharp]
+
+[rust]: https://doc.rust-lang.org/book/second-edition/ch09-02-recoverable-errors-with-result.html
+[elm]: http://package.elm-lang.org/packages/elm-lang/core/latest/Result
+[ocaml]: https://ocaml.org/learn/tutorials/error_handling.html#Result-type
+[fsharp]: https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/results
+
+
+I'm not a fan of useless abbreviations
+(as if 3 instead of 5 characters would make a difference) but
+a fan of readability and pronounceability of code
+(e.g. dictating your coworker a snippet of code)
+and therefore this package uses:
+
+```purescript
+data Result error value = Error error | Ok value
+```
+
+
+Because how typeclasses work in PureScript it must be `Result error value`
+and not `Result value error`, so that the value can be `map`ed.
+([details])
+
+[details]: https://github.com/purescript/purescript/issues/3202#issuecomment-357465332
+
 
 ## Installation
 
 ```
-bower install purescript-either
+bower install --save purescript-result
 ```
+
 
 ## Documentation
 
-Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-either).
+Module documentation is [published on Pursuit].
+
+[published on Pursuit]: http://pursuit.purescript.org/packages/purescript-result

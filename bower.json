@@ -1,11 +1,11 @@
 {
-  "name": "purescript-either",
-  "homepage": "https://github.com/purescript/purescript-either",
+  "name": "purescript-result",
+  "homepage": "https://github.com/adius/purescript-result",
   "description": "Values with two possibilities",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/purescript/purescript-either.git"
+    "url": "git://github.com/adius/purescript-result.git"
   },
   "ignore": [
     "**/.*",
@@ -18,6 +18,11 @@
   ],
   "dependencies": {
     "purescript-foldable-traversable": "^3.0.0",
-    "purescript-prelude": "^3.0.0"
+    "purescript-prelude": "^3.0.0",
+    "purescript-either": "^3.1.0"
+  },
+  "devDependencies": {
+    "purescript-console": "^3.0.0",
+    "purescript-exceptions": "purescript/purescript-exceptions#^3.1.0"
   }
 }

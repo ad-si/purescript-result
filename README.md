@@ -12,12 +12,12 @@ This should be used instead of the more genereic `Either`.
 
 Many other functional programming languages also support Result types:
 
-Language | Type Name | Success | Error | Documentation
----------|-----------|---------|-------|--------------
-Elm      | Result error value | Ok      | Err   | [doc.rust-lang.org/book][rust]
-Rust     | Result<T, E>       | Ok      | Err   | [package.elm-lang.org][elm]
-OCaml    | ('a, 'b) result    | Ok | Error | [ocaml.org/learn][ocaml]
-F#       | Result<'T,'TError> | Ok | Error | [docs.microsoft.com][fsharp]
+Language | Type Name            | Success | Error | Documentation
+---------|----------------------|---------|-------|--------------
+Elm      | `Result error value` | Ok      | Err | [doc.rust-lang.org/book][rust]
+Rust     | `Result<T, E>`       | Ok      | Err   | [package.elm-lang.org][elm]
+OCaml    | `('a, 'b) result`    | Ok      | Error | [ocaml.org/learn][ocaml]
+F#       | `Result<'T,'TError>` | Ok      | Error | [docs.microsoft.com][fsharp]
 
 [rust]: https://doc.rust-lang.org/book/second-edition/ch09-02-recoverable-errors-with-result.html
 [elm]: http://package.elm-lang.org/packages/elm-lang/core/latest/Result

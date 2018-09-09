@@ -1,11 +1,11 @@
 module Test.Main where
 
-import Control.Monad.Eff (Eff)
-import Control.Monad.Eff.Console (CONSOLE, log)
-import Control.Monad.Eff.Exception (EXCEPTION, throw)
 import Data.Either (Either(Left,Right))
 import Data.Foldable (and)
 import Data.Result (Result(Error,Ok), fromEither, toEither)
+import Effect (Effect)
+import Effect.Class.Console (log)
+import Effect.Exception (throw)
 import Prelude
 
 
@@ -25,8 +25,7 @@ tests =
   ]
 
 
-main :: forall eff.
-  Eff (console :: CONSOLE, exception :: EXCEPTION | eff) Unit
+main :: Effect Unit
 main =
   if (and tests)
   then log "All tests passed ✔"

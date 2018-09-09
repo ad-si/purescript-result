@@ -12,7 +12,6 @@ import Data.Eq (class Eq1)
 import Data.Foldable (class Foldable)
 import Data.Functor.Invariant (class Invariant, imapF)
 import Data.Maybe (Maybe(..), maybe)
-import Data.Monoid (mempty)
 import Data.Ord (class Ord1)
 import Data.Traversable (class Traversable)
 
@@ -32,9 +31,7 @@ data Result error value = Error error | Ok value
 -- | ``` purescript
 -- | f <$> Error y == Error y
 -- | ```
-instance functorResult :: Functor (Result a) where
-  map _ (Error x) = Error x
-  map f (Ok y) = Ok (f y)
+derive instance functorResult :: Functor (Result a)
 
 instance invariantResult :: Invariant (Result a) where
   imap = imapF
@@ -165,7 +162,7 @@ instance showResult :: (Show a, Show b) => Show (Result a b) where
 -- | types the `Result` can contain.
 derive instance eqResult :: (Eq a, Eq b) => Eq (Result a b)
 
-instance eq1Result :: Eq a => Eq1 (Result a) where eq1 = eq
+derive instance eq1Result :: Eq a => Eq1 (Result a)
 
 -- | The `Ord` instance allows `Result` values to be compared with
 -- | `compare`, `>`, `>=`, `<` and `<=` whenever there is an `Ord` instance for
@@ -174,7 +171,7 @@ instance eq1Result :: Eq a => Eq1 (Result a) where eq1 = eq
 -- | Any `Error` value is considered to be less than a `Ok` value.
 derive instance ordResult :: (Ord a, Ord b) => Ord (Result a b)
 
-instance ord1Result :: Ord a => Ord1 (Result a) where compare1 = compare
+derive instance ord1Result :: Ord a => Ord1 (Result a)
 
 instance boundedResult :: (Bounded a, Bounded b) => Bounded (Result a b) where
   top = Ok top
@@ -207,12 +204,6 @@ instance bitraversableResult :: Bitraversable Result where
   bitraverse _ g (Ok b) = Ok <$> g b
   bisequence (Error a) = Error <$> a
   bisequence (Ok b) = Ok <$> b
-
-instance semiringResult :: (Semiring b) => Semiring (Result a b) where
-  one = Ok one
-  mul x y = mul <$> x <*> y
-  zero = Ok zero
-  add x y = add <$> x <*> y
 
 instance semigroupResult :: (Semigroup b) => Semigroup (Result a b) where
   append x y = append <$> x <*> y

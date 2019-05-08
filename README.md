@@ -1,9 +1,9 @@
 # PureScript Result
 
-[![Latest release](http://img.shields.io/github/release/adius/purescript-result.svg)
-](https://github.com/adius/purescript-result/releases)
-[![Build status](https://travis-ci.org/adius/purescript-result.svg?branch=master)
-](https://travis-ci.org/adius/purescript-result)
+[![Latest release](http://img.shields.io/github/release/ad-si/purescript-result.svg)
+](https://github.com/ad-si/purescript-result/releases)
+[![Build status](https://travis-ci.org/ad-si/purescript-result.svg?branch=master)
+](https://travis-ci.org/ad-si/purescript-result)
 
 The `Result` type is used to represent computations
 that may succeed or fail.

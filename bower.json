@@ -1,11 +1,11 @@
 {
   "name": "purescript-result",
-  "homepage": "https://github.com/adius/purescript-result",
+  "homepage": "https://github.com/ad-si/purescript-result",
   "description": "Values with two possibilities",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/adius/purescript-result.git"
+    "url": "git://github.com/ad-si/purescript-result.git"
   },
   "ignore": [
     "**/.*",

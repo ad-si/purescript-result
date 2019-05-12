@@ -55,3 +55,14 @@ bower install --save purescript-result
 Module documentation is [published on Pursuit].
 
 [published on Pursuit]: http://pursuit.purescript.org/packages/purescript-result
+
+
+## Development
+
+Deployment of new version:
+
+```sh
+npx pulp test
+npx pulp version
+npx pulp publish
+```

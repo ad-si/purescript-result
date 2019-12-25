@@ -14,8 +14,8 @@ Many other functional programming languages also support Result types:
 
 Language | Type Name            | Success | Error | Documentation
 ---------|----------------------|---------|-------|--------------
-Elm      | `Result error value` | Ok      | Err | [doc.rust-lang.org/book][rust]
-Rust     | `Result<T, E>`       | Ok      | Err   | [package.elm-lang.org][elm]
+Elm      | `Result error value` | Ok      | Err | [package.elm-lang.org][elm]
+Rust     | `Result<T, E>`       | Ok      | Err   | [doc.rust-lang.org/book][rust]
 OCaml    | `('a, 'b) result`    | Ok      | Error | [ocaml.org/learn][ocaml]
 F#       | `Result<'T,'TError>` | Ok      | Error | [docs.microsoft.com][fsharp]
 

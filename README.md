@@ -14,15 +14,15 @@ Many other functional programming languages also support Result types:
 
 Language | Type Name            | Success | Error | Documentation
 ---------|----------------------|---------|-------|--------------
-Elm      | `Result error value` | Ok      | Err | [package.elm-lang.org][elm]
+Elm      | `Result error value` | Ok      | Err   | [package.elm-lang.org][elm]
 Rust     | `Result<T, E>`       | Ok      | Err   | [doc.rust-lang.org/book][rust]
 OCaml    | `('a, 'b) result`    | Ok      | Error | [ocaml.org/learn][ocaml]
 F#       | `Result<'T,'TError>` | Ok      | Error | [docs.microsoft.com][fsharp]
 
-[rust]: https://doc.rust-lang.org/book/second-edition/ch09-02-recoverable-errors-with-result.html
-[elm]: http://package.elm-lang.org/packages/elm-lang/core/latest/Result
-[ocaml]: https://ocaml.org/learn/tutorials/error_handling.html#Result-type
-[fsharp]: https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/results
+[rust]: https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html
+[elm]: https://package.elm-lang.org/packages/elm/core/latest/Result
+[ocaml]: https://ocaml.org/docs/error-handling#using-the-result-type-for-errors
+[fsharp]: https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/results
 
 
 I'm not a fan of useless abbreviations
